@@ -2,19 +2,39 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using EmailService.Services;
-using EmailService;
+using EmailService.Models;
+using Microsoft.Extensions.Options;
+using MongoDB.Driver;
+using MongoDB.Bson.Serialization.Serializers;
+using MongoDB.Bson.Serialization;
+using MongoDB.Bson;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// BsonSeralizer... fortæller at hver gang den ser en Guid i alle entiteter skal den serializeres til en string. 
+BsonSerializer.RegisterSerializer(new GuidSerializer(BsonType.String));
+
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();
+
+//MongoDB
+builder.Services.Configure<MongoDbSettings>(options =>
+{
+    options.ConnectionURI = Environment.GetEnvironmentVariable("ConnectionURI");
+    options.DatabaseName = Environment.GetEnvironmentVariable("DatabaseName");
+    options.CollectionName = Environment.GetEnvironmentVariable("CollectionName");
+});
+builder.Services.AddSingleton<Logging>();
+
 
 // Add services to the container.
 
 builder.Services.AddControllers();
 
-// Configure EmailSettings from appsettings.json and register EmailService
+// smpt Email
 builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
 builder.Services.AddScoped<EmailSender>();
+builder.Services.AddSingleton<ILoggingService, Logging>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

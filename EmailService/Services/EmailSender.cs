@@ -2,6 +2,7 @@
 using System.Net;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
+using EmailService.Models;
 namespace EmailService.Services
 {
     public class EmailSender
