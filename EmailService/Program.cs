@@ -3,49 +3,44 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using EmailService.Services;
 using EmailService.Models;
-using Microsoft.Extensions.Options;
-using MongoDB.Driver;
+using Microsoft.Extensions.Configuration;
 using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Bson.Serialization;
 using MongoDB.Bson;
+using EmailService;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// BsonSeralizer... fortæller at hver gang den ser en Guid i alle entiteter skal den serializeres til en string. 
+// BsonSerializer configuration
 BsonSerializer.RegisterSerializer(new GuidSerializer(BsonType.String));
 
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();
 
-//MongoDB
-builder.Services.Configure<MongoDbSettings>(options =>
-{
-    options.ConnectionURI = Environment.GetEnvironmentVariable("ConnectionURI");
-    options.DatabaseName = Environment.GetEnvironmentVariable("DatabaseName");
-    options.CollectionName = Environment.GetEnvironmentVariable("CollectionName");
-});
+// MongoDB configuration
+builder.Services.Configure<MongoDbSettings>(builder.Configuration.GetSection("MongoDbSettings"));
 builder.Services.AddSingleton<Logging>();
 
-
-// Add services to the container.
-
-builder.Services.AddControllers();
-
-// smpt Email
+// Email settings and services
 builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
 builder.Services.AddScoped<EmailSender>();
+
+// Register RabbitReceiver with a factory to handle scoped dependencies
+builder.Services.AddSingleton<RabbitReceiver>(serviceProvider =>
+    new RabbitReceiver(() => serviceProvider.CreateScope().ServiceProvider.GetRequiredService<EmailSender>()));
+
 builder.Services.AddSingleton<ILoggingService, Logging>();
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+// Add controllers
+builder.Services.AddControllers();
+
+// Swagger configuration
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-Console.WriteLine("Starting application...");
-
 var app = builder.Build();
-Console.WriteLine("Application built, configuring middleware...");
 
-// Configure the HTTP request pipeline.
+// Middleware configuration
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -53,9 +48,14 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
-Console.WriteLine("Application is running...");
+
+Console.WriteLine("Application is starting...");
+
+// Start listening for RabbitMQ messages
+var receiver = app.Services.GetRequiredService<RabbitReceiver>();
+// Ensure this runs in a background thread or as a hosted service
+app.Lifetime.ApplicationStarted.Register(() => receiver.ReceiveMessages());
+
 app.Run();

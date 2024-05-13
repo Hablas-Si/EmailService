@@ -21,19 +21,7 @@ public class EmailController : ControllerBase
         _loggingService = loggingService;
         _config = config;
     }
-    /*
-    [HttpGet("test")]
-    public IActionResult GetTestEmail()
-    {
-        var dummyEmail = new Email
-        {
-            To = "test@example.com",
-            Subject = "Test Email",
-            Body = "This is a test email."
-        };
-        return Ok(dummyEmail);
-    }
-    */
+    
     [HttpPost("send")]
     public IActionResult SendEmail([FromBody] Email email)
     {

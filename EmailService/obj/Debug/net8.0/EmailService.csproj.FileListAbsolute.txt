@@ -44,3 +44,5 @@ C:\Users\skriv\source\repos\EmailService\EmailService\obj\Debug\net8.0\refint\Em
 C:\Users\skriv\source\repos\EmailService\EmailService\obj\Debug\net8.0\EmailService.pdb
 C:\Users\skriv\source\repos\EmailService\EmailService\obj\Debug\net8.0\EmailService.genruntimeconfig.cache
 C:\Users\skriv\source\repos\EmailService\EmailService\obj\Debug\net8.0\ref\EmailService.dll
+C:\Users\skriv\source\repos\EmailService\EmailService\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\skriv\source\repos\EmailService\EmailService\bin\Debug\net8.0\RabbitMQ.Client.dll
