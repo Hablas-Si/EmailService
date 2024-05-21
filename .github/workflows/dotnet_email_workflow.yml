@@ -11,6 +11,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    services:
+      rabbitmq:
+        image: rabbitmq
+        ports:
+          - 5672:5672  # Default RabbitMQ port
 
     steps:
     - name: Checkout repository
@@ -19,7 +24,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '8.0'  
+        dotnet-version: '8.0'  # Ensure this matches your project requirements
 
     - name: Restore dependencies
       run: dotnet restore EmailService/EmailService.csproj  
@@ -27,14 +32,12 @@ jobs:
     - name: Build
       run: dotnet build EmailService/EmailService.csproj --no-restore  
 
-    
-    # Example step to send a test email upon deployment
     - name: Send Test Email
       run: dotnet run --project EmailService/EmailService.csproj -- "Test Email"  
-    - name: Send Production Email
       env:
         EMAIL_SERVER: smtp.gmail.com
         EMAIL_PORT: 587
         EMAIL_USERNAME: ${{ secrets.EMAIL_USERNAME }}
         EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
-      run: dotnet run --project EmailService/EmailService.csproj -- "Real Email"  
+        RABBITMQ_HOST: rabbitmq  # Name of the service in the workflow
+        RABBITMQ_PORT: 5672
