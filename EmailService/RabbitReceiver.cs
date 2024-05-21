@@ -19,7 +19,11 @@ namespace EmailService
 
         public void ReceiveMessages()
         {
-            var factory = new ConnectionFactory { HostName = "localhost" };
+            // Use environment variable to get the host name
+            string rabbitMQHost = Environment.GetEnvironmentVariable("RABBITMQ_HOST") ?? "localhost";
+            int rabbitMQPort = Convert.ToInt32(Environment.GetEnvironmentVariable("RABBITMQ_PORT") ?? "5672");
+
+            var factory = new ConnectionFactory { HostName = rabbitMQHost, Port = rabbitMQPort };
             using var connection = factory.CreateConnection();
             using var channel = connection.CreateModel();
 
