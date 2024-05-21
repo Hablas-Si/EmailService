@@ -33,8 +33,8 @@ jobs:
       run: dotnet run --project EmailService/EmailService.csproj -- "Test Email"  
     - name: Send Production Email
       env:
-        EMAIL_SERVER: ${{ secrets.EMAIL_SERVER }}
-        EMAIL_PORT: ${{ secrets.EMAIL_PORT }}
+        EMAIL_SERVER: smtp.gmail.com
+        EMAIL_PORT: 587
         EMAIL_USERNAME: ${{ secrets.EMAIL_USERNAME }}
         EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
       run: dotnet run --project EmailService/EmailService.csproj -- "Real Email"  
