@@ -2,43 +2,29 @@ name: .NET Email Service CI/CD
 
 on:
   push:
-    branches:
-      - master
+    branches: [ "master" ]
   pull_request:
-    branches:
-      - master
+    branches: [ "master" ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    services:
-      rabbitmq:
-        image: rabbitmq
-        ports:
-          - 5672:5672
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: '8.0'
+      - name: Login to Docker Hub
+        env:
+          DOCKER_USER: ${{ secrets.DOCKER_USER }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
 
-    - name: Restore dependencies
-      run: dotnet restore EmailService/EmailService.csproj  
+      - name: Build the Docker image
+        env:
+          DOCKER_USER: ${{ secrets.DOCKER_USER }}
+        run: docker build . -f EmailService/Dockerfile -t ${DOCKER_USER}/EmailService-image:1.0.0
 
-    - name: Build
-      run: dotnet build EmailService/EmailService.csproj --no-restore  
-
-    - name: Send Email
-      run: |
-        dotnet run --project EmailService/EmailService.csproj -- "{\"To\":\"recipient@example.com\", \"Subject\":\"Hello from GitHub Actions\", \"Body\":\"This is a test email sent from GitHub Actions via RabbitMQ.\"}"  
-      env:
-        EMAIL_SERVER: smtp.gmail.com
-        EMAIL_PORT: 587
-        EMAIL_USERNAME: ${{ secrets.EMAIL_USERNAME }}
-        EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
-        RABBITMQ_HOST: rabbitmq  # This should match the service name defined in 'services'
-        RABBITMQ_PORT: 5672
+      - name: Push Docker image to Docker Hub
+        env:
+          DOCKER_USER: ${{ secrets.DOCKER_USER }}
+        run: docker push ${DOCKER_USER}/EmailService-image:1.0.0
