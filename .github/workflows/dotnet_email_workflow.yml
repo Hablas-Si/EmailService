@@ -22,9 +22,9 @@ jobs:
       - name: Build the Docker image
         env:
           DOCKER_USER: ${{ secrets.DOCKER_USER }}
-        run: docker build . -f EmailService/Dockerfile -t ${DOCKER_USER}/EmailService-image:1.0.0
+        run: docker build . -f EmailService/Dockerfile -t ${DOCKER_USER}/emailservice-image:1.0.0
 
       - name: Push Docker image to Docker Hub
         env:
           DOCKER_USER: ${{ secrets.DOCKER_USER }}
-        run: docker push ${DOCKER_USER}/EmailService-image:1.0.0
+        run: docker push ${DOCKER_USER}/emailservice-image:1.0.0
