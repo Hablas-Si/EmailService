@@ -1,0 +1,44 @@
+name: .NET Email Service CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '6.0'  # Adjust according to your .NET version
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build
+      run: dotnet build --no-restore
+
+    # Optional: Add steps for running tests if applicable
+    - name: Test
+      run: dotnet test --no-build
+    - name: Deploy
+      run: echo "Deploy your application here (e.g., to Azure, AWS, etc.)"
+    
+    # Example step to send a test email upon deployment
+    - name: Send Test Email
+      run: dotnet run --project path/to/your/EmailService.csproj -- "Test Email"
+    - name: Send Production Email
+      env:
+        EMAIL_SERVER: ${{ secrets.EMAIL_SERVER }}
+        EMAIL_PORT: ${{ secrets.EMAIL_PORT }}
+        EMAIL_USERNAME: ${{ secrets.EMAIL_USERNAME }}
+        EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+      run: dotnet run --project path/to/your/EmailService.csproj -- "Real Email"
