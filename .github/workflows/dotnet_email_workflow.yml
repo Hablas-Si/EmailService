@@ -7,6 +7,7 @@ on:
   pull_request:
     branches:
       - master
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,27 +19,22 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '6.0'  # Adjust according to your .NET version
+        dotnet-version: '8.0'  
 
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore EmailService/EmailService.csproj  
 
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build EmailService/EmailService.csproj --no-restore  
 
-    # Optional: Add steps for running tests if applicable
-    - name: Test
-      run: dotnet test --no-build
-    - name: Deploy
-      run: echo "Deploy your application here (e.g., to Azure, AWS, etc.)"
     
     # Example step to send a test email upon deployment
     - name: Send Test Email
-      run: dotnet run --project path/to/your/EmailService.csproj -- "Test Email"
+      run: dotnet run --project EmailService/EmailService.csproj -- "Test Email"  
     - name: Send Production Email
       env:
         EMAIL_SERVER: ${{ secrets.EMAIL_SERVER }}
         EMAIL_PORT: ${{ secrets.EMAIL_PORT }}
         EMAIL_USERNAME: ${{ secrets.EMAIL_USERNAME }}
         EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
-      run: dotnet run --project path/to/your/EmailService.csproj -- "Real Email"
+      run: dotnet run --project EmailService/EmailService.csproj -- "Real Email"  
