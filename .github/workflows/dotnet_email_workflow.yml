@@ -18,7 +18,7 @@ jobs:
       - name: Login to Docker Hub
         env:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-        run: echo $DOCKER_PASSWORD | docker login -u $DOCKER_USER --password-stdin
+        run: echo '$DOCKER_PASSWORD' | docker login -u $DOCKER_USER --password-stdin
 
       - name: Build the Docker image
         run: docker build . -f EmailService/Dockerfile -t $DOCKER_USER/EmailService-image:1.0.0
