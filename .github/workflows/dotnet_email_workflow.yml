@@ -15,7 +15,7 @@ jobs:
       rabbitmq:
         image: rabbitmq
         ports:
-          - 5672:5672  # Default RabbitMQ port
+          - 5672:5672
 
     steps:
     - name: Checkout repository
@@ -24,7 +24,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '8.0'  # Ensure this matches your project requirements
+        dotnet-version: '8.0'
 
     - name: Restore dependencies
       run: dotnet restore EmailService/EmailService.csproj  
@@ -32,12 +32,13 @@ jobs:
     - name: Build
       run: dotnet build EmailService/EmailService.csproj --no-restore  
 
-    - name: Send Test Email
-      run: dotnet run --project EmailService/EmailService.csproj -- "Test Email"  
+    - name: Send Email
+      run: |
+        dotnet run --project EmailService/EmailService.csproj -- "{\"To\":\"recipient@example.com\", \"Subject\":\"Hello from GitHub Actions\", \"Body\":\"This is a test email sent from GitHub Actions via RabbitMQ.\"}"  
       env:
         EMAIL_SERVER: smtp.gmail.com
         EMAIL_PORT: 587
         EMAIL_USERNAME: ${{ secrets.EMAIL_USERNAME }}
         EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
-        RABBITMQ_HOST: rabbitmq  # Name of the service in the workflow
+        RABBITMQ_HOST: rabbitmq  # This should match the service name defined in 'services'
         RABBITMQ_PORT: 5672
