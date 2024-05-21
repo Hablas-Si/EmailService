@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\skriv\\source\\repos\\EmailService\\EmailService\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BAC5BD29-8A5A-4AC9-8DEE-0147C1370171}|EmailService.csproj|c:\\users\\skriv\\source\\repos\\emailservice\\emailservice\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{BAC5BD29-8A5A-4AC9-8DEE-0147C1370171}|EmailService.csproj|solutionrelative:dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAC5BD29-8A5A-4AC9-8DEE-0147C1370171}|EmailService.csproj|c:\\users\\skriv\\source\\repos\\emailservice\\emailservice\\emailservice.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{BAC5BD29-8A5A-4AC9-8DEE-0147C1370171}|EmailService.csproj|solutionrelative:emailservice.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BAC5BD29-8A5A-4AC9-8DEE-0147C1370171}|EmailService.csproj|c:\\users\\skriv\\source\\repos\\emailservice\\emailservice\\rabbitreceiver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BAC5BD29-8A5A-4AC9-8DEE-0147C1370171}|EmailService.csproj|solutionrelative:rabbitreceiver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -47,10 +55,6 @@
       "RelativeMoniker": "D:0:0:{BAC5BD29-8A5A-4AC9-8DEE-0147C1370171}|EmailService.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BAC5BD29-8A5A-4AC9-8DEE-0147C1370171}|EmailService.csproj|c:\\users\\skriv\\source\\repos\\emailservice\\emailservice\\emailservice.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{BAC5BD29-8A5A-4AC9-8DEE-0147C1370171}|EmailService.csproj|solutionrelative:emailservice.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BAC5BD29-8A5A-4AC9-8DEE-0147C1370171}|EmailService.csproj|c:\\users\\skriv\\source\\repos\\emailservice\\emailservice\\models\\mongodbsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BAC5BD29-8A5A-4AC9-8DEE-0147C1370171}|EmailService.csproj|solutionrelative:models\\mongodbsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -79,6 +83,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\Users\\skriv\\source\\repos\\EmailService\\EmailService\\Dockerfile",
+              "RelativeDocumentMoniker": "Dockerfile",
+              "ToolTip": "C:\\Users\\skriv\\source\\repos\\EmailService\\EmailService\\Dockerfile",
+              "RelativeToolTip": "Dockerfile",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-05-21T10:12:09.17Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "RabbitReceiver.cs",
               "DocumentMoniker": "C:\\Users\\skriv\\source\\repos\\EmailService\\EmailService\\RabbitReceiver.cs",
               "RelativeDocumentMoniker": "RabbitReceiver.cs",
@@ -91,20 +108,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "EmailSender.cs",
-              "DocumentMoniker": "C:\\Users\\skriv\\source\\repos\\EmailService\\EmailService\\Services\\EmailSender.cs",
-              "RelativeDocumentMoniker": "Services\\EmailSender.cs",
-              "ToolTip": "C:\\Users\\skriv\\source\\repos\\EmailService\\EmailService\\Services\\EmailSender.cs",
-              "RelativeToolTip": "Services\\EmailSender.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAwwCAAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-08T09:01:03.443Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "EmailController.cs",
               "DocumentMoniker": "C:\\Users\\skriv\\source\\repos\\EmailService\\EmailService\\Controllers\\EmailController.cs",
               "RelativeDocumentMoniker": "Controllers\\EmailController.cs",
@@ -112,12 +116,11 @@
               "RelativeToolTip": "Controllers\\EmailController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-08T07:37:15.476Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-08T07:37:15.476Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "Logging.cs",
               "DocumentMoniker": "C:\\Users\\skriv\\source\\repos\\EmailService\\EmailService\\Services\\Logging.cs",
               "RelativeDocumentMoniker": "Services\\Logging.cs",
@@ -125,12 +128,11 @@
               "RelativeToolTip": "Services\\Logging.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-09T07:59:56.873Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-09T07:59:56.873Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "milj\u00F8.md",
               "DocumentMoniker": "C:\\Users\\skriv\\source\\repos\\EmailService\\EmailService\\milj\u00F8.md",
               "RelativeDocumentMoniker": "milj\u00F8.md",
@@ -138,12 +140,11 @@
               "RelativeToolTip": "milj\u00F8.md",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2024-05-09T09:55:11.878Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-09T09:55:11.878Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\skriv\\source\\repos\\EmailService\\EmailService\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",
@@ -151,12 +152,11 @@
               "RelativeToolTip": "Properties\\launchSettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-05-08T10:01:28Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-08T10:01:28Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\skriv\\source\\repos\\EmailService\\EmailService\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -164,12 +164,11 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-05-08T07:55:47.878Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-08T07:55:47.878Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "EmailSettings.cs",
               "DocumentMoniker": "C:\\Users\\skriv\\source\\repos\\EmailService\\EmailService\\Models\\EmailSettings.cs",
               "RelativeDocumentMoniker": "Models\\EmailSettings.cs",
@@ -177,12 +176,11 @@
               "RelativeToolTip": "Models\\EmailSettings.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-08T09:16:35.314Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-08T09:16:35.314Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Email.cs",
               "DocumentMoniker": "C:\\Users\\skriv\\source\\repos\\EmailService\\EmailService\\Models\\Email.cs",
               "RelativeDocumentMoniker": "Models\\Email.cs",
@@ -190,38 +188,11 @@
               "RelativeToolTip": "Models\\Email.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-08T07:37:04.233Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-08T07:37:04.233Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ILoggingService.cs",
-              "DocumentMoniker": "C:\\Users\\skriv\\source\\repos\\EmailService\\EmailService\\Services\\ILoggingService.cs",
-              "RelativeDocumentMoniker": "Services\\ILoggingService.cs",
-              "ToolTip": "C:\\Users\\skriv\\source\\repos\\EmailService\\EmailService\\Services\\ILoggingService.cs",
-              "RelativeToolTip": "Services\\ILoggingService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-09T10:00:14.594Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\skriv\\source\\repos\\EmailService\\EmailService\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\skriv\\source\\repos\\EmailService\\EmailService\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAUwC0AAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-08T07:37:06.818Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 1,
               "Title": "EmailService.http",
               "DocumentMoniker": "C:\\Users\\skriv\\source\\repos\\EmailService\\EmailService\\EmailService.http",
               "RelativeDocumentMoniker": "EmailService.http",
@@ -229,11 +200,48 @@
               "RelativeToolTip": "EmailService.http",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2024-05-08T08:53:21.816Z"
+              "WhenOpened": "2024-05-08T08:53:21.816Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EmailSender.cs",
+              "DocumentMoniker": "C:\\Users\\skriv\\source\\repos\\EmailService\\EmailService\\Services\\EmailSender.cs",
+              "RelativeDocumentMoniker": "Services\\EmailSender.cs",
+              "ToolTip": "C:\\Users\\skriv\\source\\repos\\EmailService\\EmailService\\Services\\EmailSender.cs",
+              "RelativeToolTip": "Services\\EmailSender.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAwwCAAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-08T09:01:03.443Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ILoggingService.cs",
+              "DocumentMoniker": "C:\\Users\\skriv\\source\\repos\\EmailService\\EmailService\\Services\\ILoggingService.cs",
+              "RelativeDocumentMoniker": "Services\\ILoggingService.cs",
+              "ToolTip": "C:\\Users\\skriv\\source\\repos\\EmailService\\EmailService\\Services\\ILoggingService.cs",
+              "RelativeToolTip": "Services\\ILoggingService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T10:00:14.594Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\skriv\\source\\repos\\EmailService\\EmailService\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\skriv\\source\\repos\\EmailService\\EmailService\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAUwC0AAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-08T07:37:06.818Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "MongoDbSettings.cs",
               "DocumentMoniker": "C:\\Users\\skriv\\source\\repos\\EmailService\\EmailService\\Models\\MongoDbSettings.cs",
               "RelativeDocumentMoniker": "Models\\MongoDbSettings.cs",
@@ -245,7 +253,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "EmailService.csproj",
               "DocumentMoniker": "C:\\Users\\skriv\\source\\repos\\EmailService\\EmailService\\EmailService.csproj",
               "RelativeDocumentMoniker": "EmailService.csproj",

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "G7cxzFkI9cF7DBX6mvoj8uUbAPO5jdjPUDnEcSgDJIXuzX/BmKPn1FLe30pbRO1M42JwavOiTvsDgKBzJGNVCA==",
+  "dgSpecHash": "tc71Qu7yV7Wzo/9NP6JosBmNpyRkNXp5U0qEtE8Z+6+HkhJ5/9M0CAydCB25JxNDrahuV/W306ANrn8aAwu0zA==",
   "success": true,
   "projectFilePath": "C:\\Users\\skriv\\source\\repos\\EmailService\\EmailService\\EmailService.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,7 @@
     "C:\\Users\\skriv\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\2.0.0\\microsoft.extensions.logging.abstractions.2.0.0.nupkg.sha512",
     "C:\\Users\\skriv\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\skriv\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\skriv\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.6\\microsoft.visualstudio.azure.containers.tools.targets.1.19.6.nupkg.sha512",
     "C:\\Users\\skriv\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\skriv\\.nuget\\packages\\mongodb.bson\\2.25.0\\mongodb.bson.2.25.0.nupkg.sha512",
     "C:\\Users\\skriv\\.nuget\\packages\\mongodb.driver\\2.25.0\\mongodb.driver.2.25.0.nupkg.sha512",
