@@ -1,7 +1,7 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0-alpine as build
 WORKDIR /app
 
-COPY EmailService/ .   # Assuming EmailService/ is the folder containing your project files
+COPY EmailService/ .   
 RUN dotnet restore
 RUN dotnet publish -c Release -o /app/published-app
 
